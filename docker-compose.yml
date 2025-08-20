@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - HUNTER_API_KEY=${HUNTER_API_KEY}
+    env_file:
+      - .env
+    volumes:
+      - ./src:/app/src
+    restart: unless-stopped

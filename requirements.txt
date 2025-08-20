@@ -1,0 +1,7 @@
+fastapi[standard]
+uvicorn[standard]
+pydantic[email]
+httpx
+python-dotenv
+mypy
+wemake-python-styleguide
