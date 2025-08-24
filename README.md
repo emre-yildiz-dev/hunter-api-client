@@ -50,23 +50,23 @@ Visit `http://127.0.0.1:8000/docs` for interactive documentation.
 ### Python Example
 
 ```python
-from hunter_client import create_client
+from hunter_client.client import create_client
 
 client = create_client(api_key="your_api_key")
 
 with client:
     # Search a domain
-    emails = client.domain_search(domain="example.com", limit=10)
+    emails = client.domain.search(domain="example.com", limit=10)
     
     # Find someone's email
-    email = client.email_finder(
+    email = client.email.find(
         domain="example.com",
         first_name="John",
         last_name="Doe"
     )
     
     # Verify an email
-    result = client.email_verifier("john.doe@example.com")
+    result = client.email.verify("john.doe@example.com")
 ```
 
 ## Development

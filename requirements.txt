@@ -4,4 +4,4 @@ pydantic[email]
 httpx
 python-dotenv
 mypy
-wemake-python-styleguide
+wemake-python-styleguide==0.19.2

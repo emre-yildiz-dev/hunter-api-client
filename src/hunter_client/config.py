@@ -1,0 +1,10 @@
+"""Configuration constants for Hunter.io API client."""
+
+HTTP_ERROR_CODE = 500
+HTTP_BAD_REQUEST = 400
+DEFAULT_PORT = 8000
+DEFAULT_LIMIT = 10
+MAX_LIMIT = 100
+HUNTER_API_BASE_URL = 'https://api.hunter.io/v2'
+DEFAULT_TIMEOUT = 30.0
+CACHE_SIZE = 128
