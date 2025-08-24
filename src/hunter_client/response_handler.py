@@ -1,6 +1,6 @@
 """Response handling for Hunter.io API."""
 
-from typing import Any, TypeVar
+from typing import Any, TypeVar, cast
 
 import httpx
 from pydantic import ValidationError
@@ -20,7 +20,7 @@ class HunterAPIError(Exception):
 def parse_json_response(response: httpx.Response) -> dict[str, Any]:
     """Parse JSON from response."""
     try:
-        return response.json()
+        return cast(dict[str, Any], response.json())
     except Exception as error:
         error_msg = 'Failed to parse JSON: {0}'.format(error)
         raise HunterAPIError(error_msg) from error
@@ -29,7 +29,7 @@ def parse_json_response(response: httpx.Response) -> dict[str, Any]:
 def extract_model_data(json_data: dict[str, Any]) -> dict[str, Any]:
     """Extract model data from JSON response."""
     data_value = json_data.get('data')
-    return data_value if data_value is not None else json_data
+    return cast(dict[str, Any], data_value) if data_value is not None else json_data
 
 
 def validate_response_model(
