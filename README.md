@@ -104,16 +104,19 @@ with client:
 docker-compose up  # Run with Docker
 ```
 
-## Future Developments
+## TODO: Future Developments
 
-### Authentication
-Adding OAuth2 and API key management to secure endpoints and manage user access.
+- [ ] **Authentication (SQLite + JWT)** - Implement secure user authentication with JWT tokens and SQLite database for user management. This will enable multi-user support, API key management per user, and role-based access control (RBAC).
 
-### Tests
-Expanding test coverage with more edge cases, performance tests, and end-to-end testing scenarios.
+- [ ] **Rate Limiting (Redis)** - Add Redis-based rate limiting to protect the API from abuse and manage Hunter.io's API limits effectively. Implement sliding window algorithms with configurable limits per user and endpoint.
 
-### Rate Limiting
-Implementing intelligent rate limiting to handle Hunter.io's API limits gracefully and provide better user feedback.
+- [ ] **Database Layer (PostgreSQL/SQLite)** - Integrate a persistent database layer to store user profiles, API usage history, cached responses, and audit logs. This enables better analytics and user management.
+
+- [ ] **Caching with Redis** - Enhance performance with Redis caching for Hunter.io responses. Implement TTL-based cache invalidation, selective cache bypass, and distributed caching for multi-instance deployments.
+
+- [ ] **Monitoring with ELK Stack** - Set up comprehensive monitoring using Elasticsearch, Logstash, and Kibana (ELK Stack) for real-time system health observation, log aggregation, and performance metrics visualization.
+
+- [ ] **Background Tasks (Celery + Redis)** - Implement asynchronous task processing with Celery and Redis for handling long-running operations like bulk email verification, scheduled domain scans, and report generation.
 
 ## Tech Stack
 
